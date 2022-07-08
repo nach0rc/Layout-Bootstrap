@@ -1,0 +1,168 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+
+}
+
+body {
+    font-size: 180%;
+}
+
+p {
+    display: none;
+}
+
+
+ul {
+    list-style: none;
+}
+header {
+    background-color: black;
+    color: white;
+    padding: 15px;
+}
+header nav ul {
+    display: flex;
+}
+
+header nav ul li {
+    /* margin: 0 15px;  esto es lo mismo que lo de abajo, abajo es un shortcut*/
+    margin: 0 15px 0 15px;
+}
+
+.navbar-mobile{
+ display: none;   
+}
+
+.img-hover{
+    transition: all 1s ease;
+}
+
+.img-hover:hover {
+    transform: rotate(-5deg);
+    filter: blur(2px);
+}
+
+.links {
+    margin-top: 30px;
+    text-align: center;
+    font-weight: bold;
+    
+}
+
+
+/* cuando el Link fue visitado */
+
+.link1:visited {
+    color: green;
+    
+}
+
+.link2 {
+    text-decoration: none;
+}
+
+.link2:hover {
+    text-decoration: underline;
+}
+/* Al momento de presionar el boton del mouse */
+.link3:active {
+    color: orange;
+
+}
+
+.texts{
+    text-align: center;
+    margin-top: 30px;
+    font-weight: bold;
+
+}
+
+/* odd:impares | even:pares */
+.texts p:nth-child(2) {
+    background-color: cyan;
+
+}
+
+.texts p:first-child {
+    background-color: orange;
+}
+
+.texts p:last-child {
+    background-color: violet;
+    color: white;
+}
+
+.elements {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+/* Pseudoelementos */
+/* Tanto after como before tiene que ir con la propiedad content */
+.elements ul li::before {
+    content: "👉🏻" ;
+    margin-right: 10px;
+}
+
+/* .elements ul li::after {
+    content: "✌";
+    margin-left: 10px ;
+} */
+
+.elements ul li:hover::after {
+    content: "💕";
+}
+
+/* mobile last: max-width (va de mayor a menor) = los estilos se aplican HASTA esta resolucion */
+/* Moblie First: min-width = las resoluciones van de menor a mayor , los estilos se aplican DESDE */
+
+@media (max-width:992px ) {
+
+    h1 {
+        color: brown;
+    }
+   
+}
+
+
+
+@media (max-width:768px ) {
+    h1 {
+        color: aqua;
+    }
+    header nav ul {
+        /* display: none; */
+        overflow: scroll;
+    }
+    .navbar-mobile {
+        display: block;
+        
+    }
+
+}
+
+
+
+@media (max-width:562px ) {
+    h1 {
+        color: orange;
+        text-align: center;
+    }
+}
+
+/* Operadores Logicos son ej: and (y) - or (o) (el or se representa con una ","  */
+@media (min-width:1200px) and (max-width:1300px) {
+    h1 {
+        color: blue;
+        text-align: right;
+    }
+}
+@media (min-width:650px) , print {
+  p {
+    display: block;
+    color: yellowgreen;
+  }
+}
